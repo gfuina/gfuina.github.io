@@ -2,6 +2,29 @@
 <html>
 <body>
 
+
+<script>
+    window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '722513448888623',
+        cookie     : true,
+        xfbml      : true,
+        version    : 'v13.0'
+      });
+        
+      FB.AppEvents.logPageView();   
+        
+    };
+  
+    (function(d, s, id){
+       var js, fjs = d.getElementsByTagName(s)[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement(s); js.id = id;
+       js.src = "https://connect.facebook.net/en_US/sdk.js";
+       fjs.parentNode.insertBefore(js, fjs);
+     }(document, 'script', 'facebook-jssdk'));
+  </script>
+
     <script>
         window.fbAsyncInit = function() {
           FB.init({
@@ -21,13 +44,10 @@
          }(document, 'script', 'facebook-jssdk'));
       </script>
 
-<div
-class="fb-like"
-data-share="true"
-data-width="450"
-data-show-faces="true">
-</div>
-
+<fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button>
 <h1>Hello World</h1>
 <p>I'm hosted with GitHub Pages.</p>
 </body>
